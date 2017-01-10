@@ -1,2 +1,3 @@
-<p id="statistics">Countries visited: {{visitedCountries}} of {{totalCountries}}</p>
+<div ng-show="isLoading" class="loader">Loading...</div>
+<p ng-hide="isLoading" id="statistics">Countries: <strong>{{visitedCountries}}</strong> of {{totalCountries}}</p>
 <div id='map'></div>
