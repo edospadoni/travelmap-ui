@@ -401,6 +401,11 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/styles/themes/default/assets/fonts',
           src: ['bower_components/semantic/src/themes/default/assets/fonts/*'],
           flatten: true
+        }, {
+          expand: true,
+          dest: '<%= yeoman.dist %>/scripts/directives',
+          src: ['<%= yeoman.app %>/scripts/directives/*'],
+          flatten: true
         }]
       },
       styles: {
