@@ -1,3 +1,19 @@
 <div ng-show="isLoading" class="loader">Loading...</div>
 <p ng-hide="isLoading" id="statistics">Countries: <strong>{{visitedCountries}}</strong> of {{totalCountries}}</p>
-<div id='map'></div>
+<div id="map"></div>
+<div ng-hide="isLoading" id="settings" class="ui icon button">
+  <i class="settings icon"></i>
+</div>
+<div ng-hide="isLoading" class="ui popup">
+  <div class="header">Secret</div>
+  <div class="ui input {{newSecret.length == 0 ? 'error' : ''}} margin-adjust">
+    <input ng-model="newSecret" ng-value="secret" type="text" placeholder="Insert secret...">
+    <div ng-if="secret !== newSecret || secret.length == 0" ng-click="saveSecret()" class="ui icon button button-adjust">
+      <i class="add icon"></i>
+    </div>
+    <div ng-if="secret === newSecret && secret.length > 0" ng-click="removeSecret()" class="ui icon button button-adjust-remove">
+      <i class="remove icon"></i>
+    </div>
+  </div>
+</div>
+</div>

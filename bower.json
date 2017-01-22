@@ -7,11 +7,20 @@
     "angular-resource": "^1.4.0",
     "angular-route": "^1.4.0",
     "angular-sanitize": "^1.4.0",
-    "flag-icon-css": "^2.8.0"
+    "flag-icon-css": "^2.8.0",
+    "semantic": "semantic-ui#^2.2.7"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "travelmapUiApp"
+  "moduleName": "travelmapUiApp",
+  "overrides": {
+    "semantic": {
+      "main": [
+        "dist/semantic.min.css",
+        "dist/semantic.min.js"
+      ]
+    }
+  }
 }

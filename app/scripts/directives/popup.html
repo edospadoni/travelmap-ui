@@ -1,0 +1,10 @@
+<div>
+  <strong>{{currentCity.name}}</strong>
+  <p>{{currentCity.formatted_address}}</p>
+  <span class="flag-icon flag-icon-{{currentCity.country_code}}"></span>
+  <button ng-if="!inSearchMode" ng-click="removeCity(currentCity)" class="compact ui red button">Remove City</button>
+  <button ng-if="inSearchMode" ng-click="addCity(currentCity)" class="compact ui green button">Add City</button>
+  <div ng-show="invalidSecret" class="ui red mini message popup-message">
+    Invalid secret
+  </div>
+</div>

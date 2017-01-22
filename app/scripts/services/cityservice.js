@@ -19,14 +19,23 @@ angular.module('travelmapUiApp')
       });
     };
 
-    this.getCityPointProperties = function (city) {
-      return {
-        "icon": "circle",
-        "description": [
-          "<strong>" + city.name + "</strong>",
-          "<p>" + city.formatted_address + "</p>",
-          "<span class=\"flag-icon flag-icon-" + city.country_code.toLowerCase() + "\"></span>"
-        ].join("")
-      };
-    }
+    this.addCity = function (city) {
+      return $q(function (resolve, reject) {
+        RestService.post('/city', city).then(function (city) {
+          resolve(city);
+        }, function (reason) {
+          reject(reason);
+        });
+      });
+    };
+
+    this.removeCity = function (cityId) {
+      return $q(function (resolve, reject) {
+        RestService.delete('/city/' + cityId).then(function (city) {
+          resolve(city);
+        }, function (reason) {
+          reject(reason);
+        });
+      });
+    };
   });
