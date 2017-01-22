@@ -396,6 +396,11 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/flags/4x3',
           src: ['bower_components/flag-icon-css/flags/4x3/*'],
           flatten: true
+        }, {
+          expand: true,
+          dest: '<%= yeoman.dist %>/styles/themes/default/assets/fonts',
+          src: ['bower_components/semantic/src/themes/default/assets/fonts/*'],
+          flatten: true
         }]
       },
       styles: {
