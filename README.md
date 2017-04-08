@@ -1,12 +1,52 @@
-# travelmap-ui
+# TravelMap UI
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+### Description
+This is a sample AngularJS application to show all yours visited city in the world. It can be used as a frontend for the [TravelMap API].
 
-## Build & development
+It uses [MapBox] as a map engine.
 
-Run `grunt` for building and `grunt serve` for preview.
+### Demo
+[Example]
 
-## Testing
+### Configuration
+Get a valid MapBox `access token`. Follow the guide [here]
 
-Running `grunt test` will run the unit tests with karma.
+Edit the file `app/scripts/config.js` and specify your configuration:
+```
+var appConfig = {
+    // is the API token of MapBox
+    MAP_TOKEN: 'YOUR-MAPBOX-TOKEN',
+    // is the center of the map (currently in Italy)
+    MAP_CENTER: [20.9027835, 44.4963655],
+    MAP_ZOOM: 2,
+    // specify different themes for the map (search on mapbox)
+    MAP_STYLE: 'mapbox://styles/mapbox/dark-v9',
+    // is the url of the TravelMap API
+    MAP_API_SOURCE: 'YOUR-BACKEND-API-URL'
+};
+```
+
+### Build
+Install `bower` and `grunt`
+
+`npm install -g grunt bower`
+
+
+Install the JavaScript dependecies (`node_modules` and `bower_components`)
+
+`npm install && bower install`
+
+### Use
+Launch the application
+
+`grunt serve`
+
+### Deploy
+Compress the application for production
+
+`grunt build`
+
+[TravelMap API]:https://github.com/edospadoni/travelmap-api
+[here]:https://www.mapbox.com/help/create-api-access-token/
+[MapBox]:https://www.mapbox.com/
+[Example]:https://edospadoni.github.io/travels/#!/
